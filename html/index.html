@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>NodeJs Project</title>
+        <link rel="stylesheet" href="assets/semantic/semantic.min.css">
+        <link rel="stylesheet" href="assets/style.css">
+        <style>
+            .main.container {
+                margin-top: 5em;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="ui fixed inverted menu">
+            <a href="/" class="header item">Accueil</a>
+            <a href="https://github.com/MaaximeLH/nodejs-chat" class="header item right">Github</a>
+        </div>
+        <div class="ui main container">
+            <div id="error-message"></div>
+
+            <div style="display:none;" class="loader">
+                <img style="display: block;margin-left: auto;margin-right: auto;" src="assets/loader.gif">
+                <p style="text-align:center;" id="loader-text"></p>
+            </div>
+
+            <div id="login">
+                <span class="ui form">
+                    <div class="field">
+                        <label for="username">Connexion</label>
+                        <input type="text" id="username" placeholder="Entre ton prénom ici et valide .."></textarea>
+                    </div>
+                    <button type="submit" id="login-btn" class="ui blue labeled submit icon button"><i class="sign in icon"></i> Connexion</button>
+                </span>
+            </div>
+
+            <div style="display:none;" id="chat">
+
+                <span class="info">
+                    <p class="participants users"></p>
+                    <p style="cursor:pointer;" class="activity pull-right"></p>
+                </span>
+                <br />
+                <span class="ui form">
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea id="message"></textarea>
+                    </div>
+                    <button type="submit" id="send" class="ui blue labeled submit icon button"><i class="icon edit"></i> Valider</button>
+                </span>
+
+                <div class="ui comments">
+                    <h3 class="ui dividing header">Les messages</h3>
+                        <div id="comments"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui modal recent-activity">
+          <div class="header">
+            Activité récente
+          </div>
+          <div class="ui middle aligned animated list activity-items" style="margin-left:15px;"></div>
+          <div class="actions">
+            <div class="ui negative right labeled icon button">
+              Fermer
+              <i class="window close icon"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="ui modal user-online">
+          <div class="header">
+            Liste des utilisateurs
+          </div>
+          <div class="ui middle aligned animated list users-items" style="margin-left:15px;"></div>
+          <div class="actions">
+            <div class="ui negative right labeled icon button">
+              Fermer
+              <i class="window close icon"></i>
+            </div>
+          </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="assets/semantic/semantic.min.js" type="text/javascript"></script>
+        <script src="assets/main.js" type="text/javascript"></script>
+        <script> $('.activity').on('click', function(){ $('.recent-activity').modal('show'); });</script>
+        <script> $('.users').on('click', function(){ $('.user-online').modal('show'); });</script>
+    </body>
+</html>

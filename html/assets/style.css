@@ -1,0 +1,24 @@
+.avatar {
+    background-color: #2185D0;
+    color: #fff;
+    display: inline-block;
+    border-radius: 2px;
+    vertical-align: top;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    font-weight: normal;
+    text-align: center;
+    text-decoration: none !important;
+    line-height: 1.73333333;
+    -moz-user-select:none;
+    width: 35px;
+    font-size: 18px;
+}
+.ui.comments .comment .avatar {
+    width: 35px;
+    height: auto;
+}
+
+.pull-right {
+  float: right !important;
+}
